@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body></body>
+  <script>
+    function listNum(arr) {
+      var counts = {};
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] in counts) {
+          counts[arr[i]]++;
+        } else {
+          counts[arr[i]] = 1;
+        }
+      }
+
+      var result = [];
+      for (var key in counts) {
+        if (counts[key] === 1) {
+          result.push(parseInt(key)); 
+        }
+      }
+
+      return result;
+    }
+
+    var arr = [1, 2, 3, 1, 2, 5];
+    var result = listNum(arr);
+    console.log(result); 
+  </script>
+</html>

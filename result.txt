@@ -1,0 +1,131 @@
+1. Tính năng nào sau đây không phải là tính năng của Java?
+    C: Sử dụng con trỏ
+
+2. public static void main(String[] agrs) thì agrs[0] chứa giá trị gì?
+    C: Tham số đầu tiên của danh sách tham số
+
+3. Để gộp chuỗi trong JavaScript ta sử dụng ký hiệu nào?
+    A: +
+
+4. Lệnh prompt trong Javascript để làm gì?
+    A: Hiện một thông báo nhập thông tin
+
+5. _____ được sử dụng để tìm và sửa lỗi trong chương trình Java.
+    D: JDB
+
+6. Khai báo vòng lặp for nào sau đây là không hợp lệ?
+    A: for ( int i = 11; i >= 0; i / 1 ) 
+    hoặc
+    C: for ( int i = 10; i >= 1; - -i )
+
+7. Ngôn ngữ kịch bản Javascript và Java có giống nhau không? 
+    B: Không giống nhau, và Java là ngôn ngữ do Sun Microsystems phát triển
+
+8. Package nào chứa Random class?
+    A: java.util package
+
+9. Chọn đáp án ko đúng về final.
+    B: không thể được extended
+
+10. Kiểu enum là gì?
+    A: Là kiểu dữ liệu gồm các trường chứa một tập hợp cố định các hằng số
+
+11. 
+ArrayList list = new ArrayList();  
+Số lượng ban đầu của danh sách ArrayList là bao nhiêu?
+    C: 0
+
+12. 
+int values[ ] = {1,2,3,4,5,6,7,8,9,10};  
+for(int i=0;i< Y; ++i) 
+System.out.println(values[i]);  
+Chọn kết quả được in ra.
+    D: None
+
+13. Cho đoạn code sau, kết quả là: 
+const a = 0.1;
+const b = 0.2; 
+const c = 0.3; 
+console.log(a + b === c);
+    B: false
+
+14. Phạm vi của biến được khai báo bằng let và var là như thế nào?
+    B:Phạm vi của biến được khai báo bằng let và var chỉ nằm trong phạm vi của hàm chúng được khai báo. 
+  
+15. Có bao nhiêu thread có thể được thực hiện tại một thời điểm?
+    B: Đa luồng
+
+16. Làm sao để khi click chuột vào link thì tạo ra cửa sổ mới? 
+    C: <a href="url" target="_blank">
+
+17. "nestech".length trả lại giá trị là:
+    C: 7
+
+18. Khi sử dụng thẻ <div id ="test" > thì ở phần khai báo CSS ta đặt tên đối tượng thế nào? 
+    D: Đặt tên đối tượng có dấu # ở đầu tên đối tượng
+
+19. Khi sử dụng var, biến được khai báo sẽ được gán giá trị mặc định là gì?
+    B: undefined
+
+20. Kết quả của đoạn code là:
+ const user = { 
+name: 'java k18', 
+age: 1, 
+classes: { 
+   type: 'hocvien', name: 'java'
+ } }; 
+Object.freeze(user); 
+user.classes.name = 'javascript'; 
+console.log(user.classes.name);
+    B: javascript
+
+21. Viết chương trình liệt kê n số nguyên tố đầu tiên trong java. Số nguyên dương n được nhập từ bàn phím.
+
+Note: Bài này mọi người đang hiểu sai đề bài thì phải, nhập n số nguyên dương, hiển thị ra từng đấy số nguyên tố đầu tiên
+ví dụ: nhập n = 5 
+In ra màn hình: 2 3 5 7 11;
+
+22. Một cửa hàng bán đồ gia dụng bán các sản phẩm như sau:
+ + đồ điện:  nồi cơm điện, máy sấy, bếp điện, bàn là, quạt
+ + đồ bếp: chảo lớn, chảo nhỏ, đũa (5 đôi/1 bộ), tô lớn, tô nhỏ
+ 
+Tùy chọn đơn giá của mỗi sản phẩm ,
+ tạo 1 đơn hàng cho người mua sau đó in ra màn hình đơn hàng bao gồm tên sản phẩm, số lượng, giá tiền mỗi sản phẩm theo số lượng,
+ tổng tiền đơn hàng, tổng tiền sau khi tính thuế (2,5%)
+ 
+ 
+ Form tạo đơn hàng như dưới đây:
+ - Khi định nghĩa các sản phẩm trong select gán attribute là price (giá tiền) thay vì phải nhập giá tiền cho mỗi sản phầm,
+ khi tính tiền cho mỗi sản phẩm sẽ dự trên attribute đó
+ - khi select 1 sản phẩm: ví dụ đồ điện chọn máy sấy, ngay bên dưới sẽ đc append thêm 1 select nữa của đồ điện để chọn tiếp sản phẩm thứ 2,
+ tương tự với đồ bếp
+
+
+
+
+
+
+
+
+
+Đáp án sai:
+
+Nghĩa: 13, 15
+
+Vũ: 7, 11, 15
+
+Trấn: 5, 9, 14
+21: đáp án ko đúng
+
+Duy: 2, 9, 11, 14, 16, 20
+21: đáp án ko đúng
+
+Phát: 1, 2, 3, 5, 9, 17, 18
+21: đáp án ko đúng
+
+Trí: 5, 9, 10, 13, 14, 16, 17, 19
+
+
+
+
+

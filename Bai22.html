@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Bài 22</title>
+    <meta name="description" />
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <br />
+      <h2>NHẬP ĐƠN HÀNG</h2>
+      <form id="formInput">
+        <div class="form-group col-md-6">
+          <label>Đồ điện:</label>
+          <select
+            name="electtric"
+            class="form-control rowsElectricGoods"
+            style="margin-top: 10px"
+          >
+            <option value="" selected>Chọn loại hàng</option>
+            <option value="1" price="300000">Nồi cơm điện</option>
+            <option value="2" price="200000">Máy sấy</option>
+            <option value="3" price="500000">Bếp điện</option>
+            <option value="4" price="250000">Bàn là</option>
+            <option value="5" price="150000">Quạt</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label>Đồ bếp:</label>
+          <select
+            name="kitchen"
+            class="form-control rowsKitchenGoods"
+            style="margin-top: 10px"
+          >
+            <option value="" selected>Chọn loại hàng</option>
+            <option value="1" price="300000">Chảo lớn</option>
+            <option value="2" price="200000">Chảo nhỏ</option>
+            <option value="3" price="500000">Đũa (5 đôi/1 bộ)</option>
+            <option value="4" price="250000">Tô lớn</option>
+            <option value="5" price="150000">Tô nhỏ</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+      <div id="displayResult" style="display: none">
+        <br /><br /><br />
+        <h2 class="d-flex justify-content-center">THÔNG TIN ĐƠN HÀNG</h2>
+        <div>
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr class="text-center">
+                <th scope="col" class="col-md-1">STT</th>
+                <th scope="col" class="col-md-5">Tên sản phẩm</th>
+                <th scope="col" class="col-md-2">Số lượng</th>
+                <th scope="col" class="col-md-4">Thành tiền</th>
+              </tr>
+            </thead>
+            <tbody id="displayTableBody" class="text-center"></tbody>
+          </table>
+          <br />
+
+          <div id="displaySubtotal" class="text-right"></div>
+          <div id="displayTotal" class="text-right"></div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    let array = [];
+
+    $(document).on('change', '.rowsKitchenGoods', function () {
+      createSelect($(this), '.rowsKitchenGoods', array);
+    });
+
+    $(document).on('change', '.rowsElectricGoods', function () {
+      createSelect($(this), '.rowsElectricGoods', array);
+    });
+
+    let createSelect = function (element, className, array) {
+      let option = element.val(),
+        name = element.find('option:selected').text(),
+        price = Number(element.find('option:selected').attr('price'));
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i].value == option) {
+          array[i].price += price;
+          array[i].quantity += 1;
+        }
+      }
+
+      let checkExisted = array.find((item) => item.name === name);
+
+      if (!checkExisted || array.length == 0) {
+        array.push({
+          value: option,
+          name: name,
+          price: price,
+          quantity: 1,
+        });
+      }
+
+      let electric = $($(className)[0]).clone();
+
+      if (element.val() && element.next().length == 0) {
+        electric = $(electric).val('');
+
+        element.after(electric);
+      }
+    };
+
+    $('#formInput').on('submit', function (e) {
+      e.preventDefault();
+      let html = '',
+        stt = 0,
+        total = 0;
+
+      for (let i = 0; i < array.length; i++) {
+        html += `<tr>
+            <td>${(stt += 1)}</td>
+            <td>${array[i].name}</td>
+            <td>${array[i].quantity}</td>
+            <td>${array[i].price}</td>
+            </tr>`;
+        total += array[i].price * array[i].quantity;
+      }
+
+      $('#displayResult').css('display', 'initial');
+      $('#displayTableBody').empty('').append(html);
+      $('#displaySubtotal').text('Sub-Total: ' + total);
+      $('#displayTotal').text('Total: ' + total * 1.025);
+    });
+  </script>
+</html>
